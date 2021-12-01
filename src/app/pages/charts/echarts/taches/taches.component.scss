@@ -1,0 +1,42 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+nb-card {
+    &.own-scroll {
+      height: 55vh;
+    }
+  
+}  
+.columnf {
+    float: left;
+   
+  }
+  
+  /* Clear floats after the columns */
+  .rowf:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .rig{
+    float : right;
+  }
+ .red{
+    border-top: var(--list-item-divider-width) var(--list-item-divider-style) var(--list-item-divider-color);
+    border-left: 3px solid !important;
+    border-left-color: #FF0000 !important;
+}
+.yellow {
+ 
+  border-top: var(--list-item-divider-width) var(--list-item-divider-style) var(--list-item-divider-color);
+  border-left: solid !important;
+  border-left-color:  #FFFF00	 !important;
+}
+
+.green {
+ 
+  border-top: var(--list-item-divider-width) var(--list-item-divider-style) var(--list-item-divider-color);
+  border-left: solid !important;
+  border-left-color:  #9ACD32	 !important;
+}
+}

@@ -1,0 +1,20 @@
+@import '../../styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  .menu-sidebar ::ng-deep .scrollable {
+    padding-top: nb-theme(layout-padding-top);
+  }
+}
+nb-layout-header {
+  background-color: #083041;
+  color: #b29797;
+  font-family: var(--header-text-font-family);
+  font-size: var(--header-text-font-size);
+  font-weight: var(--header-text-font-weight);
+  line-height: var(--header-text-line-height);
+}
+nb-layout-header nav a {
+  color: #ffffff;
+}

@@ -1,0 +1,27 @@
+<nb-card class="own-scroll">
+    <nb-card-header>
+        
+                   
+            <div class="rowf">
+               <div class="columnf"><img src="assets/images/opportunitiess.png"/></div>
+               <div class="columnf"> <h6>&nbsp;Opportunités</h6></div>
+               <div class="columnf rig"><img src="assets/images/more.png" [nbContextMenu]="items"/></div>
+             </div>
+       </nb-card-header>
+       <nb-list>
+        <nb-list-item *ngFor="let item of opportunites" [ngClass]="{'red': item.etat === 'echec', 'green':item.etat === 'encours', 'yellow':item.etat === 'validé'}">
+             <article style="margin-left:10px;">
+                
+                
+                     
+                     <div ><h6>&nbsp;{{item.title}}</h6></div>
+                   
+                   <div><p style="color:gray;  margin-left:5px;">{{item.desc}}</p></div>
+                 <div><label style="background-color:rgb(196, 189, 189); margin-left:10px; "><img *ngIf="item.etat == 'validé' ||item.etat == 'encours'" src="assets/images/cirlces/circlevert.png"/><img *ngIf="item.etat == 'echec'" src="assets/images/cirlces/circle.png"/>&nbsp;{{item.state}}</label></div>
+               </article>
+         </nb-list-item>
+        
+        
+         
+       </nb-list>
+     </nb-card>

@@ -1,0 +1,301 @@
+
+     <!-- CHART PROCESSUS  ////////////////////// -->
+     
+      <div class="row"> 
+
+
+
+         <div class="col-md-3 col-sm-6 col-xs-12">
+          <nb-card>
+              <nb-card-header>
+                <div class="rows">
+                  <div class="columnt">  <h6>Processus</h6></div>
+                  <div class="columnic"> <img src="assets/images/creativity.png"/></div>
+                </div>
+              </nb-card-header>
+              
+              <nb-card-body>
+                  <div class="chart-wrapper">
+                      <canvas baseChart  *ngIf="chartReady1"
+                      [data]="doughnutChartData"
+                      [labels]="doughnutChartLabels"
+                      [chartType]="doughnutChartType"
+                      [colors]="doughnutChartColors"
+                      [options]="options">
+                    </canvas>
+                    <div class="donut-inner">
+                      <h5> {{ProcessGraphValue}}</h5>
+                  </div>
+                  </div>
+              </nb-card-body>
+            </nb-card>
+          </div>
+        
+           <!-- CHART UNITES  ////////////////////// -->
+        
+            
+         <div class="col-md-3 col-sm-6 col-xs-12">
+              <nb-card>
+                  <nb-card-header><div class="rows">
+                      <div class="columnt">  <h6>Unités</h6></div>
+                      <div class="columnic"> <img src="assets/images/united.png"/></div>
+                    </div></nb-card-header>
+                  
+                  <nb-card-body>
+                      <div class="chart-wrapper">
+                          <canvas baseChart  *ngIf="chartReady2"
+                          [data]="doughnutChartDataUnite"
+                          [labels]="doughnutChartLabels"
+                          [chartType]="doughnutChartType"
+                          [colors]="doughnutChartColors"
+                          [options]="options"
+                         >
+                        </canvas>
+                        <div class="donut-inner">
+                          <h5>{{UniteGraphValue}}</h5>
+                          
+                      </div>
+                      </div>
+                  </nb-card-body>
+                </nb-card>
+              </div>
+       
+               <!-- CHART THEMATIQUES  ////////////////////// -->
+            
+         <div class="col-md-3 col-sm-6 col-xs-12">                  
+            <nb-card>
+                      <nb-card-header>
+                        <div class="rows">
+                          <div class="columnt">  <h6>Thématiques</h6></div>
+                          <div class="columnic"> <img src="assets/images/mobile.png"/></div>
+                        </div>
+                      </nb-card-header>
+                      
+                      <nb-card-body>
+                          <div class="chart-wrapper">
+                              <canvas baseChart  *ngIf="chartReady3"
+                              [data]="doughnutChartDataThematique"
+                              [labels]="doughnutChartLabels"
+                              [chartType]="doughnutChartType"
+                              [colors]="doughnutChartColors"
+                              [options]="options">
+                            </canvas>
+                            <div class="donut-inner">
+                              <h5>{{ThematiqueGraphValue}}</h5>
+                          </div>
+                          </div>
+                      </nb-card-body>
+            </nb-card>
+          </div>
+                 
+                   <!-- CHART ENTITES EXTERNES  ////////////////////// -->
+            
+                <div class="col-md-3 col-sm-6 col-xs-12">
+         
+                      <nb-card>
+                          <nb-card-header><div class="rows">
+                              <div class="columnt">  <h6>Entités externes</h6></div>
+                              <div class="columnic"> <img src="assets/images/external.png"/></div>
+                            </div></nb-card-header>
+                          
+                          <nb-card-body>
+                              <div class="chart-wrapper">
+                                  <canvas baseChart *ngIf="chartReady4"
+                                  [data]="doughnutChartDataEntiteExterne"
+                                  [labels]="doughnutChartLabels"
+                                  [chartType]="doughnutChartType"
+                                  [colors]="doughnutChartColors"
+                                  [options]="options">
+                                </canvas>
+                                <div class="donut-inner">
+                                  <h5>{{EntiteExterneGraphValue}}</h5>
+                                  
+                              </div>            
+                              </div>
+                          </nb-card-body>
+                        </nb-card>
+                      </div>
+                      </div>
+                  
+                    
+                   
+
+<!-- COLUMN DE INCIDENTS  ////////////////////// -->
+
+<div class="row">
+    <div class="col-sm-4">
+      <nb-card>
+        <nb-card-header>
+          <div class="rows">
+            <div class="columnt">  <h6>Incident</h6></div>
+            <div class="columnic"> <img src="assets/images/danger.png"/></div>
+          </div>
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="column left" >
+                  <h2 style="color:#28aae1;">{{valueGraphIncident}}</h2>
+                </div>
+                <div class="column middle">
+                    <ngx-chartjs-multiple-xaxis *ngIf="graphReadyIncident" label="Incidents" [labels]="arraylabelsIncidents" [datas]="dataIncident" style="padding:2px;"></ngx-chartjs-multiple-xaxis>
+                </div>
+              </div>
+        </nb-card-body>
+        <nb-card-footer [ngClass]="{'red': typeI == -1, 'green':typeI == 1}"> <img src="assets/images/arrows/top.png" *ngIf="typeI == 1" /><img src="assets/images/arrows/down.png" *ngIf="typeI == -1"/>{{valueSinceGraphIncident}}% Since Last Month</nb-card-footer>
+      </nb-card>
+    </div>
+    <!-- COLUMN DE RISQUES  ////////////////////// -->
+      <div class="col-sm-4">
+          <nb-card>  <nb-card-header><div class="rows">
+        <div class="columnt">  <h6>Risques</h6></div>
+        <div class="columnic"> <img src="assets/images/bomb.png"/></div>
+      </div></nb-card-header>
+    
+    <nb-card-body>
+        <div class="row">
+            <div class="column left" >
+              <h2 style="color:#28aae1;">{{valueGraphRisques}}</h2>
+            
+            </div>
+            <div class="column middle">
+                <ngx-chartjs-multiple-xaxis *ngIf="graphReadyRisque" label="Risques" [labels]="arraylabelsRisques" [datas]="dataRisques" style="margin:2px;"></ngx-chartjs-multiple-xaxis>
+            </div>
+            
+          </div>
+    </nb-card-body>
+    <nb-card-footer [ngClass]="{'red': typeR == -1, 'green':typeR == 1}"> <img src="assets/images/arrows/top.png" *ngIf="typeR == 1" /><img src="assets/images/arrows/down.png" *ngIf="typeR == -1"/>{{valueSinceGraphRisques}}% Since Last Month</nb-card-footer>
+  </nb-card>
+</div> 
+ <!-- COLUMN D'OPPRTUNITES  ////////////////////// -->
+      <div class="col-sm-4">
+          <nb-card>
+              <nb-card-header>
+                <div class="rows">
+                   <div class="columnt">  <h6>Opportunités</h6></div>
+                   <div class="columnic"> <img src="assets/images/opportunities.png"/></div>
+                </div>
+             </nb-card-header>
+          
+          <nb-card-body>
+              <div class="row">
+                  <div class="column left" >
+                    <h2 style="color:#28aae1;">{{valueGraphOppor}}</h2>
+                  
+                  </div>
+                  <div class="column middle">
+                      <ngx-chartjs-multiple-xaxis *ngIf="graphReadyOppor" label="Opportunites" [labels]="arraylabelsOppor" [datas]="dataOpport" style="margin:2px;"></ngx-chartjs-multiple-xaxis>
+                  </div>
+                  
+                </div>
+          </nb-card-body>
+          <nb-card-footer [ngClass]="{'red': typeO == -1, 'green':typeO == 1}" > <img src="assets/images/arrows/top.png" *ngIf="typeO == 1" /><img src="assets/images/arrows/down.png" *ngIf="typeO == -1"/>{{valueSinceGraphOppor}}% Since Last Month</nb-card-footer>
+        </nb-card>
+      </div>
+</div>
+
+<!-- Taches Concernes mon departements////////////////// ////////////////////// -->
+
+     
+      
+
+
+
+      <div class="test">
+        <!-- Taches Concernes mon departements////////////////// ////////////////////// -->
+          <div class="test1">
+          <ngx-taches></ngx-taches>
+        </div>
+
+  <!-- dérnier upload////////////////// ////////////////////// -->
+          <div class="test2">
+           <ngx-upload></ngx-upload>
+          </div>
+        </div>
+        
+
+
+        <div class="test">
+            <!-- Incidents////////////////// ////////////////////// -->
+              <div class="test1">
+              <ngx-incident></ngx-incident>
+            </div>
+    
+      <!-- Incident stats////////////////// ////////////////////// -->
+              <div class="test2">
+                  <nb-card>
+                      <nb-card-header><div class="rows">
+                          <div class="columnt">  <h6>Incident stats</h6></div>
+                        
+                        </div></nb-card-header>
+                      
+                      <nb-card-body>
+                          <div class="chart-wrapper">
+                              <canvas baseChart 
+                              [data]="doughnutChartDataIncidents"
+                              [labels]="doughnutChartLabelsIncidents"
+                              [chartType]="doughnutChartTypeIncidents"
+                              [options]="options"
+                              [colors]="doughnutChartColorsinc">
+                            </canvas>
+                
+                            
+                          </div>
+                      </nb-card-body>
+                    </nb-card>
+              </div>
+            </div>
+        
+            
+
+         
+            <div class="test">
+                <!-- Risques////////////////// ////////////////////// -->
+                  <div class="test1">
+                  <ngx-risque></ngx-risque>
+                </div>
+        
+          <!-- Risque States////////////////// ////////////////////// -->
+                  <div class="test2">
+                      <nb-card>
+                          <nb-card-header><div class="rows">
+                              <div class="columnt">  <h6>Risque stats</h6></div>
+                            
+                            </div></nb-card-header>
+                          
+                          <nb-card-body>
+                              <div class="chart-wrapper">
+                                  <canvas baseChart 
+                                  [data]="doughnutChartDataRisque"
+                                  [labels]="doughnutChartLabelsRisque"
+                                  [chartType]="doughnutChartTypeRisque"
+                                  [options]="options"
+                                  [colors]="doughnutChartColorsrisque">
+                                </canvas>
+                    
+                                
+                              </div>
+                          </nb-card-body>
+                        </nb-card>
+                  </div>
+                </div>
+
+
+
+
+
+
+  <!---///////////////////////////////////////////////-->
+  
+
+  <div class="test">
+    <!-- Opportunite////////////////// ////////////////////// -->
+      <div class="test1">
+      <ngx-opportunite></ngx-opportunite>
+    </div>
+
+<!-- Risque States////////////////// ////////////////////// -->
+      <div class="test2">
+        <ngx-activities></ngx-activities>
+    </div>
+    </div>
+    

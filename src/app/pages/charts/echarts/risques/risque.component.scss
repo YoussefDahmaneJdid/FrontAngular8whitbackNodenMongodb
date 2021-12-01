@@ -1,0 +1,26 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+nb-card {
+    &.own-scroll {
+      height: 55vh;
+    }
+  
+}  
+.columnf {
+    float: left;
+   
+  }
+  
+  /* Clear floats after the columns */
+  .rowf:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+ 
+.rig{
+  float : right;
+}
+
+}

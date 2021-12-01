@@ -1,0 +1,51 @@
+<nb-card class="own-scroll">
+        <nb-card-header>
+            
+                       
+                <div class="rowf">
+                        <div class="columnf"><img src="assets/images/cloud-computing.png"/></div>
+                        <div class="columnf"> <h6>&nbsp;Dérniers Uploads</h6></div>
+                        <div class="columnf rig"><img src="assets/images/more.png" [nbContextMenu]="items"/></div>
+                 </div>
+           </nb-card-header>
+           <nb-list>
+            <nb-list-item *ngFor="let item of uploads">
+                 <article style="margin-left:10px;">
+                    <div class="row">
+                        <div class="column left" *ngIf="item.type == 'pdf'"><img src="assets/images/extension/pdf.png"/></div>
+                        <div class="column left" *ngIf="item.type == 'doc'"><img src="assets/images/extension/document.png"/></div>
+                        <div class="column left" *ngIf="item.type == 'excel'"><img src="assets/images/extension/excel.png"/></div>
+                        <div class="column left" *ngIf="item.type == 'img'"><img src="assets/images/extension/picture.png"/></div>
+                        <div class="column middle">{{item.title}}</div>
+                        <div class="column ritgh"><img src="assets/images/download.png"/></div>
+                      </div>
+                   </article>
+             </nb-list-item>
+           
+            
+            
+             
+           </nb-list>
+         </nb-card>
+         <style>
+
+.left{
+  float: left;
+   width: 5%;
+}
+.ritgh{
+  float: right;
+   width: 5%;
+}
+.middle{
+ 
+   width: 90%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+         </style>

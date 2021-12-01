@@ -1,0 +1,26 @@
+<nb-card class="own-scroll">
+        <nb-card-header>
+            
+                       
+                <div class="rowf">
+                   <div class="columnf"><img src="assets/images/dngerr.png"/></div>
+                   <div class="columnf"> <h6>&nbsp;Incidents</h6></div>
+                   <div class="columnf rig"><img src="assets/images/more.png" [nbContextMenu]="items"/></div>
+                 </div>
+           </nb-card-header>
+           <nb-list>
+            <nb-list-item *ngFor="let item of incidents" [ngClass]="{'red': item.type === 'elevé', 'green':item.type === 'Moyenne', 'yellow':item.type === 'Faible'}">
+                 <article style="margin-left:10px;">
+                     <p style="color:gray;  margin-left:16px;">{{item.nom}}</p>
+                     <div class="rowf">
+                      <div class="columnf" *ngIf="item.type == 'elevé'" style="margin-bottom:6px;" ><img  src="assets/images/flags/flagred.png"/></div>
+                      <div class="columnf" *ngIf="item.type == 'Moyenne'" style="margin-bottom:6px;" ><img  src="assets/images/flags/flaggreen.png"/></div>
+                      <div class="columnf" *ngIf="item.type == 'Faible'" style="margin-bottom:6px;" ><img  src="assets/images/flags/flagyellow.png"/></div>
+                         <div class="columnf"><h6>{{item.title}}</h6></div>
+                       </div>
+                     <div><label style="background-color:rgb(196, 189, 189); margin-left:16px; ">{{item.date}}</label></div>
+                   </article>
+             </nb-list-item>
+        
+           </nb-list>
+         </nb-card>
